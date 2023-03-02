@@ -1,18 +1,17 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
+// import java.util.ArrayList;
 public class main{
   public static void main(String[] args) {
 
-    Human pavel = new Human("Павел", LocalDate.of(1983, 1, 1));
-    Human sveta = new Human("Света", LocalDate.of(1980, 2, 23));
-    Human olga = new Human("Ольга", LocalDate.of(2008, 4, 14));
-    Human sergey = new Human("Сергей", LocalDate.of(1985, 6, 3));
-    Human nastya = new Human("Настя", LocalDate.of(1987, 9, 9));
-    Human dima = new Human("Дима", LocalDate.of(2011, 3, 17));
-    Human kostya = new Human("Костя", LocalDate.of(2015, 10, 1));
-    Human kolya = new Human("Коля", LocalDate.of(1947, 11, 1));
-    Human natasha = new Human("Наташа", LocalDate.of(1950, 7, 23));
-    
+    AdultMan pavel = new AdultMan("Павел", LocalDate.of(1983, 1, 1));
+    AdultMan sveta = new AdultMan("Света", LocalDate.of(1980, 2, 23));
+    YongMan olga = new YongMan("Ольга", LocalDate.of(2008, 4, 14));
+    AdultMan sergey = new AdultMan("Сергей", LocalDate.of(1985, 6, 3));
+    AdultMan nastya = new AdultMan("Настя", LocalDate.of(1987, 9, 9));
+    YongMan dima = new YongMan("Дима", LocalDate.of(2011, 3, 17));
+    YongMan kostya = new YongMan("Костя", LocalDate.of(2015, 10, 1));
+    AdultMan kolya = new AdultMan("Коля", LocalDate.of(1947, 11, 1));
+    AdultMan natasha = new AdultMan("Наташа", LocalDate.of(1950, 7, 23));    
    
     Tree tree = new Tree();
      
@@ -33,32 +32,21 @@ public class main{
     tree.addWifeOrHusbent(kolya, natasha);
 
     System.out.println("дети Сергея");
-    System.out.println(new Research(tree).spend(sergey, Relationship.parent));
+    System.out.println(new Research(tree).spend(sergey, Relationship.PARENT));
     System.out.println("Супруг/а Сергея");
-    System.out.println(new Research(tree).spend(sergey, Relationship.wifeOrHusbent));    
+    System.out.println(new Research(tree).spend(sergey, Relationship.WIFEORHUSBENT));  
+
+    System.out.println("вечерние занятия: ");
+    allActivity(dima);    
+    allActivity(natasha);
     
+
   }
 
-}
-
-class Research {
-  ArrayList<Node> tree;
-
-  public Research(Tree tree2) {
-    tree = Tree.getTree();
-  }
-
-  public ArrayList<Human> spend(Human human, Relationship re) { 
-    var result = new ArrayList<Human>();
-
-    for (Node elem : tree) {
-      if (elem.human1.getName()== human.getName() && elem.re == re) {
-        result.add(elem.human2);
-      }
+  public static void allActivity(EveningActivity eveningActivity) {
+      eveningActivity.activity();
     }
 
-    return result;
-  }
 }
 
 

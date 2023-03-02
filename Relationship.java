@@ -1,7 +1,7 @@
 
 enum Relationship {
-    parent,
-    children,
-    wifeOrHusbent
+    PARENT,
+    CHILDREN,
+    WIFEORHUSBENT
 }
 

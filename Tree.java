@@ -9,12 +9,12 @@ public class Tree{
 
     
     public void addChildren(Human parent, Human children) {
-        tree.add(new Node(parent, Relationship.parent, children));
-        tree.add(new Node(children, Relationship.children, parent));
+        tree.add(new Node(parent, Relationship.PARENT, children));
+        tree.add(new Node(children, Relationship.CHILDREN, parent));
     }
 
     public void addWifeOrHusbent(Human human1, Human human2) {
-        tree.add(new Node(human1, Relationship.wifeOrHusbent, human2));
+        tree.add(new Node(human1, Relationship.WIFEORHUSBENT, human2));
     }
   
 

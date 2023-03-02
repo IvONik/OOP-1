@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Human {
+public class Human implements EveningActivity{
     private String name;
     private LocalDate birthDate;
 
@@ -29,5 +29,7 @@ public class Human {
             " name = " + getName()+
             ", birthDate = " + getBirthDate();
     }
-
+    public void activity(){
+        System.out.println("Вечерние активности");
+    }
 }
