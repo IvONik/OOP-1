@@ -1,5 +1,6 @@
 import java.time.LocalDate;
-// import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.ArrayList;
 public class main{
   public static void main(String[] args) {
 
@@ -11,8 +12,14 @@ public class main{
     YongMan dima = new YongMan("Дима", LocalDate.of(2011, 3, 17));
     YongMan kostya = new YongMan("Костя", LocalDate.of(2015, 10, 1));
     AdultMan kolya = new AdultMan("Коля", LocalDate.of(1947, 11, 1));
-    AdultMan natasha = new AdultMan("Наташа", LocalDate.of(1950, 7, 23));    
-   
+    AdultMan natasha = new AdultMan("Наташа", LocalDate.of(1950, 7, 23)); 
+
+    ArrayList<YongMan> yongMans = new ArrayList<>(); 
+    yongMans.add(olga);
+    yongMans.add(dima);
+    yongMans.add(kostya);
+
+    
     Tree tree = new Tree();
      
     tree.addChildren(pavel, olga);
@@ -40,7 +47,8 @@ public class main{
     allActivity(dima);    
     allActivity(natasha);
     
-
+    // WriteToFile.write(yongMans);
+    WriteToFile.read();
   }
 
   public static void allActivity(EveningActivity eveningActivity) {
